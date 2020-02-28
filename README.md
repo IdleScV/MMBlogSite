@@ -1,24 +1,30 @@
 # README
+Basics
+TO DO LIST
+- Announcements Basics
+- Likes Basics
+- Comments Basics
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+IN PROGRESS
+-Blog Basics
 
-* System dependencies
 
-* Configuration
 
-* Database creation
+FINISHED
+-User Basics
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+Basics 2 
+TO
 
-* ...
+
+
+Deadlines:
+By the end of...
+
+    Monday
+    -Skateboard + Styling
