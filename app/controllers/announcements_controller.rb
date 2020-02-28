@@ -27,10 +27,26 @@ class AnnouncementsController < ApplicationController
     end
 
     def update
-        @announcement = User.find
+        @announcement_new = Announcement.new(announcement_params)
+        if @announcement_new.valid?
+            @announcement.update(announcement_params)
+            redirect_to announcement_path(@announcement)
+        else
+            redirect_to edit_announcement_path(@announcement_new)
+        end
     end
 
     def destroy
+        @announcement.destroy
+        redirect_to announcements_path
+    end
 
+    private
+    def announcement_params
+        params.require(:announcement).permit(:title, :user_id, :content)
+    end
+
+    def find_announcement
+        @announcement = Announcement.find(params[:id])
     end
 end

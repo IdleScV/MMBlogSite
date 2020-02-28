@@ -1,0 +1,18 @@
+<h1>Announcement</h1>
+<div>
+<%= @announcement.title %>
+</div>
+<div>
+<%= @announcement.content %>
+</div>
+<div>
+Posted By: <%=link_to @announcement.user.name, user_path(@announcement.user)%>
+</div>
+
+
+<%= link_to "Edit Announcement", edit_announcement_path(@announcement) %>
+<%= link_to "Announcements", announcements_path%>
+<%= form_tag(announcement_path(@announcement), method: :delete) do%>
+    <%= submit_tag "delete" %>
+<%end%>
+
