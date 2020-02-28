@@ -1,1 +1,18 @@
 <h1> User Show Page </h1>
+<div>
+Name: <%=@user.name%>
+</div>
+
+<div>
+UserName: <%=@user.username%>
+</div>
+
+<div>
+PW: <%=@user.password%>
+</div>
+
+<%=link_to "Edit #{@user.name} page", edit_user_path(@user)%>
+<%=link_to "Users", users_path%>
+<%= form_tag(user_path(@user), method: :delete) do %>
+    <%= submit_tag "delete"%>
+<%end%>

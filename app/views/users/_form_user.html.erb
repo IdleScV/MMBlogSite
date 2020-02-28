@@ -1,1 +1,19 @@
 <h1>Form</h1>
+
+<div>
+<%= form_for @user do |f| %>
+<div>
+<%=f.label :username%>
+<%=f.text_field :username%>
+</div>
+<div>
+<%=f.label :name%>
+<%=f.text_field :name%>
+</div>
+<div>
+<%=f.label :password%>
+<%=f.text_field :password%>
+</div>
+<%=f.submit%>
+</div>
+<%end%>
