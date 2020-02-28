@@ -1,0 +1,11 @@
+
+<%= form_for @blog do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+<br>
+<%= f.label :title %>
+<%= f.text_field :title %>
+<br>
+<%= f.collection_select(:user_id,User.all,:id,:username) %>
+<%= f.submit %>
+<% end  %>
