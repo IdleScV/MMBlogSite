@@ -1,9 +1,11 @@
 <h1>Show Page for Blog </h1>
 <h3><%= @blog.title %></h3>
 <div>
-By <%= @blog.user %>
+By <%=link_to @blog.user.name, user_path(@blog.user) %>
 </div>
 
 <div>
 <%= @blog.content %>
 </div>
+
+<%= link_to "Blogs", blogs_path %>

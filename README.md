@@ -1,21 +1,20 @@
 # README
 Basics
 TO DO LIST
-- Announcements Basics
 - Likes Basics
 - Comments Basics
 
 
 
 IN PROGRESS
--Blog Basics
+
 
 
 
 FINISHED
 -User Basics
-
-
+- Announcements Basics
+-Blog Basics
 
 
 Basics 2 
