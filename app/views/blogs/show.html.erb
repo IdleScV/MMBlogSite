@@ -9,15 +9,12 @@ By <%=link_to @blog.user.name, user_path(@blog.user) %>
 </div>
 
 <div>
-<%= link_to "Like", new_like_path(@blog), method: :post %>
-<%end%>
+<%= button_to 'Like', blog_likes_path(@blog), method: :post %>
 Likes: <%= @blog.likes.count %>
 </div>
 
-<div>
 <%= link_to "Blogs", blogs_path %>
 <%= link_to "Edit Page", edit_blog_path(@blog)%>
 <%= form_tag(blog_path(@blog), method: :delete) do %>
 <%= submit_tag "Delete blog"%>
 <%end%>
-</div>
