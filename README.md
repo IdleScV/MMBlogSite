@@ -1,32 +1,24 @@
 # README
-Basics
-TO DO LIST
+A simple blog site where blogs are about software development and related topics such as machine learning.
+
+### IN PROGRESS
 - Likes Basics
 - Comments Basics
 
 
 
-IN PROGRESS
-
-
-
-
-FINISHED
+### FINISHED
 -User Basics
 - Announcements Basics
 -Blog Basics
 
 
-Basics 2 
-TO
 
-
-
-Deadlines:
+### Deadlines:
 By the end of...
 
-    Monday
-    -Skateboard + Styling
+Monday
+-Skateboard + Styling
 
 ### Styling
 - App Bar
