@@ -1,17 +1,21 @@
 # README
-A simple blog site where blogs are about software development and related topics such as machine learning.
+Basic blogging website for sharing blogs about software development and related topics, such as machine learning, algorithms, etc.
 
-### IN PROGRESS
+## TO DO LIST
 - Likes Basics
 - Comments Basics
 
 
 
-### FINISHED
--User Basics
-- Announcements Basics
--Blog Basics
+### IN PROGRESS
+Nothing yet, bro
 
+
+
+### FINISHED
+- User Basics
+- Announcements Basics
+- Blog Basics
 
 
 ### Deadlines:

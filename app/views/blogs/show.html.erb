@@ -8,4 +8,14 @@ By <%=link_to @blog.user.name, user_path(@blog.user) %>
 <%= @blog.content %>
 </div>
 
+<div>
+Likes: <%= @blog.likes.count %>
+</div>
+
+<div>
 <%= link_to "Blogs", blogs_path %>
+<%= link_to "Edit Page", edit_blog_path(@blog)%>
+<%= form_tag(blog_path(@blog), method: :delete) do %>
+    <%= submit_tag "delte"%>
+<%end%>
+</div>
