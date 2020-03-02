@@ -1,0 +1,12 @@
+<h1>All applets</h1>
+<ul>
+<%@applets.each do |applet| %>
+    <li><%= link_to (applet.title + " " + applet.updated_at.time.to_s), applet_path(applet)%></li>
+<%end%>
+</ul>
+<div>
+<%=link_to "New Announcment", new_applet_path%>
+</div>
+<div>
+<%=link_to "Homepage", homepage_path%>
+</div>

@@ -4,12 +4,12 @@
 <%= link_to "Blogs", blogs_path%>
 </div>
 <div>
-<%= link_to "Announcements", announcements_path%>
+<%= link_to "applets", applets_path%>
     <ul>
 
-    <% Announcement.all.reverse.each do |announcement| %>
+    <% Applet.all.reverse.each do |applet| %>
         <li>
-            <%=announcement.title%>
+            <%=applet.title%>
         </li>
     <%end%>
 
