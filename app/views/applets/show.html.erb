@@ -5,9 +5,6 @@
 <div>
 <%= @applet.content %>
 </div>
-<div>
-Posted By: <%=link_to @applet.user.name, user_path(@applet.user)%>
-</div>
 
 
 <%= link_to "Edit applet", edit_applet_path(@applet) %>

@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(version: 2020_02_28_172557) do
 
   create_table "applets", force: :cascade do |t|
     t.string "title"
-    t.integer "user_id"
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

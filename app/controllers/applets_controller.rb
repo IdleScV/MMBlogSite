@@ -47,6 +47,6 @@ class AppletsController < ApplicationController
     end
 
     def find_applet
-        @applet = applet.find(params[:id])
+        @applet = Applet.find(params[:id])
     end
 end
