@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   get "/blogs/:id/like", to: "likes#destroy", as: "unlike"
 
   get "/users/:id/blogs", to: "users#blogs", as: "user_blogs"
+  post "/blogs/:id/comments", to: "blogs#newcomment", as: "new_comment"
 end

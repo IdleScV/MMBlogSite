@@ -1,31 +1,46 @@
 <h1>Show Page for Blog </h1>
 <h3><%= @blog.title %></h3>
+
 <div>
-By <%=link_to @blog.user.username, user_path(@blog.user) %>
+    <h2>By <%=link_to @blog.user.username, user_path(@blog.user) %></h2>
 </div>
-<br>
+
 <div>
-<%= @blog.content %>
+    <%= @blog.content %>
 </div>
-<br>
-<% if @blog.user.id == session[:user_id]%>
-    <%= link_to "Edit Page", edit_blog_path(@blog)%>
-<br>
-    <%= form_tag(blog_path(@blog), method: :delete) do %>
-    <%= submit_tag "Delete blog"%>
-    <%end%>
-<% end %>
-<br>
+
+<div>
+    <% if @blog.user.id == session[:user_id]%>
+        <%= link_to "Edit Page", edit_blog_path(@blog)%>
+        <%= form_tag(blog_path(@blog), method: :delete) do %>
+            <%= submit_tag "Delete blog"%>
+        <%end%>
+    <% end %>
+</div>
+
 <div >
-<% if Like.find_by(blog_id: @blog.id, user_id: session[:user_id]) %>
-    <%= button_to 'SMASH THE Unlike', unlike_path(@blog), method: :get %> 
-<%else%>
-    <%= button_to 'SMASH THE Like', blog_likes_path(@blog), method: :post %>
-<%end%>
+    <% if Like.find_by(blog_id: @blog.id, user_id: session[:user_id]) %>
+        <%= button_to 'SMASH THE Unlike', unlike_path(@blog), method: :get %> 
+    <%else%>
+        <%= button_to 'SMASH THE Like', blog_likes_path(@blog), method: :post %>
+    <%end%>
     Likes: <%= @blog.likes.count %>
 </div>
 
+<div>
+    <ul>
+    <%@blog.comments.each do |c| %>
+        <h4>USER: <%=link_to c.user.name, user_path(c.user) %></h4>
+        <p><%= c.content %></p>
+    <%end%>
+    </ul>
+</div>
 
+<div>
+    <%= render "form_comment"%>
+</div>
 
-<%= link_to "Blogs", blogs_path %>
+<div>
+    <%= link_to "All blogs", blogs_path %>
+</div>
 

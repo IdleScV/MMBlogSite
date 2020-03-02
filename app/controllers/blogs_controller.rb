@@ -1,12 +1,16 @@
 class BlogsController < ApplicationController
 
-    before_action :find_blog, only:[:show, :edit, :destroy, :update, :is_liked?]
+    before_action :find_blog, only:[:show, :edit, :destroy, :update, :is_liked?, :newcomment]
     def index
         @blogs = Blog.all
     end
 
     def show
+    end
 
+    def newcomment
+        Comment.create(content: params[:content], user_id: session[:user_id], blog: @blog )
+        redirect_to blog_path(@blog)
     end
 
     def new
