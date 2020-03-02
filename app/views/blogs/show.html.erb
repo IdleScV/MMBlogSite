@@ -9,8 +9,12 @@ By <%=link_to @blog.user.username, user_path(@blog.user) %>
 </div>
 
 <div>
-<%= button_to 'Like', blog_likes_path(@blog), method: :post %>
-Likes: <%= @blog.likes.count %>
+<% if Like.find_by(blog_id: @blog.id, user_id: session[:user_id]) %>
+    <%= button_to 'Unlike', blog_likes_path(@blog), method: :delete %>
+<%else%>
+    <%= button_to 'Like', blog_likes_path(@blog), method: :post %>
+<%end%>
+    Likes: <%= @blog.likes.count %>
 </div>
 
 <%= link_to "Blogs", blogs_path %>

@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
 
-    before_action :find_blog, only:[:show, :edit, :destroy, :update]
+    before_action :find_blog, only:[:show, :edit, :destroy, :update, :is_liked?]
     def index
         @blogs = Blog.all
     end
@@ -42,8 +42,10 @@ class BlogsController < ApplicationController
         redirect_to blogs_path
     end
     
+    def is_liked?
+        Like.find_by(blog_id: @blog.id, user_id: session[:user_id]).exists?
+    end
 
-    
 
     private
 
