@@ -1,2 +1,7 @@
 <h1>Create new Blog</h1>
-<%=render "form_blog"%>
+
+<% if session[:user_id] %>
+    <%=render "form_blog"%>
+<% else %>
+    <%= link_to "YOU DON'T EXIST, CLICK HERE",  new_user_path%>
+<% end %>

@@ -14,13 +14,15 @@
         <h4>Welcome 
           <%= current_user %>
         </h4>
-        <span><%= link_to "Logout", logout_path %></span>
-      <% else %>
-        <%= link_to "Login", login_path %>
       <% end %>
     </div>
-
-
+  <br>
     <%= yield %>
+  <br>
+    <% if session[:user_id] %>
+        <span><%= link_to "Logout", logout_path %></span>
+      <% else %>
+        <span><%= link_to "Login", login_path %></span>
+    <% end %>
   </body>
 </html>

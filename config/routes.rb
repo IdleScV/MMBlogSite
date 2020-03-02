@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :applets, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :blogs, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
-      resources :likes, only: [:create, :destroy]
+      resources :likes, only: [:create]
   end
   resources :users, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   get "/logout", to: "sessions#logout"
+  get "/blogs/:id/like", to: "likes#destroy", as: "unlike"
 
+  get "/users/:id/blogs", to: "users#blogs", as: "user_blogs"
 end

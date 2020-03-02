@@ -1,0 +1,12 @@
+<h2><% @user.name %> Blogs </h2>
+
+<ul>
+    <% @user.blogs.each do |blog| %>
+        <li>
+        <%= link_to  blog.title, blog_path(blog)%>
+        </li>
+    <%end%>
+</ul>
+
+<%= link_to "New Blog", new_blog_path%>
+<%= link_to "Back to Profile", user_path(@user)%>

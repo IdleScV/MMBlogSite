@@ -7,5 +7,7 @@
 <%= link_to "Applets", applets_path%>
 </div>
 <div>
-<%= link_to "Users", users_path%>
+<%if session[:user_id]%>
+    <%= link_to "Profile", user_path(User.find(session[:user_id]))%>
+<%end%>
 </div>
