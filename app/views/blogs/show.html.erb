@@ -8,19 +8,24 @@ By <%=link_to @blog.user.username, user_path(@blog.user) %>
 <%= @blog.content %>
 </div>
 <br>
-<div>
+<% if @blog.user.id == session[:user_id]%>
+    <%= link_to "Edit Page", edit_blog_path(@blog)%>
+<br>
+    <%= form_tag(blog_path(@blog), method: :delete) do %>
+    <%= submit_tag "Delete blog"%>
+    <%end%>
+<% end %>
+<br>
+<div >
 <% if Like.find_by(blog_id: @blog.id, user_id: session[:user_id]) %>
-    <%= button_to 'SMASH THE Unlike', unlike_path(@blog), method: :get %>
+    <%= button_to 'SMASH THE Unlike', unlike_path(@blog), method: :get %> 
 <%else%>
     <%= button_to 'SMASH THE Like', blog_likes_path(@blog), method: :post %>
 <%end%>
     Likes: <%= @blog.likes.count %>
 </div>
 
+
+
 <%= link_to "Blogs", blogs_path %>
-<br>
-<%= link_to "Edit Page", edit_blog_path(@blog)%>
-<br>
-<%= form_tag(blog_path(@blog), method: :delete) do %>
-<%= submit_tag "Delete blog"%>
-<%end%>
+

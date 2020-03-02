@@ -17,7 +17,9 @@
       <% end %>
     </div>
   <br>
-    <%= yield %>
+    <div>
+      <%= yield %>
+    </div>
   <br>
     <% if session[:user_id] %>
         <span><%= link_to "Logout", logout_path %></span>
