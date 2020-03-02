@@ -1,9 +1,9 @@
 class AnnouncementsController < ApplicationController
 
     before_action :find_announcement, only: [:show, :edit, :destroy, :update]
-
+# * Show all announcements from new to old
     def index
-        @announcements = Announcement.all
+        @announcements = Announcement.all.reverse
     end
 
     def show

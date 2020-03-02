@@ -1,5 +1,21 @@
 <h1>This is Homeapage</h1>
 
-<%= link_to "Announcements", announcements_path%>
+<div>
 <%= link_to "Blogs", blogs_path%>
+</div>
+<div>
+<%= link_to "Announcements", announcements_path%>
+    <ul>
+
+    <% Announcement.all.reverse.each do |announcement| %>
+        <li>
+            <%=announcement.title%>
+        </li>
+    <%end%>
+
+    </ul>
+</div>
+
+<div>
 <%= link_to "Users", users_path%>
+</div>
