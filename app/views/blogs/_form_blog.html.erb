@@ -12,7 +12,7 @@
   </div>
 <% end %>
 
-<h4>Make a new Blog, <%= current_user %>!</h4>
+<h4>Make a new Blog, <%= current_user.name %>!</h4>
 
 <%= form_for @blog do |f| %>
   <%= f.label :title %>
