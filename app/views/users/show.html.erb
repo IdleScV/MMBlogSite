@@ -13,11 +13,14 @@ Email: <%=@user.email%>
 PW: <%=@user.password%>
 </div>
 <div>
-<%=link_to "Edit #{@user.name} page", edit_user_path(@user)%>
 <%=link_to "Users", users_path%>
-<%= form_tag(user_path(@user), method: :delete) do %>
-    <%= submit_tag "delete"%>
-<%end%>
+<% if current_user == @user %>
+    <%=link_to "Edit #{@user.name} page", edit_user_path(@user)%>
+    <%= form_tag(user_path(@user), method: :delete) do %>
+        <%= submit_tag "delete"%>
+    <%end%>
+<%end %>
+
 </div>
 <div>
 <%= link_to "My Blogs", user_blogs_path%>

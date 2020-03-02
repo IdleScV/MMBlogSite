@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     def current_user
         # memoization
         if session[:user_id]
-            @current_user ||= User.find(session[:user_id]).username
+            @current_user ||= User.find(session[:user_id])
         else
             @current_user = "Guest"
         end
