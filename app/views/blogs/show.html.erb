@@ -16,6 +16,8 @@ Likes: <%= @blog.likes.count %>
 <%= link_to "Blogs", blogs_path %>
 <%= link_to "Edit Page", edit_blog_path(@blog)%>
 <%= form_tag(blog_path(@blog), method: :delete) do %>
-    <%= submit_tag "delte"%>
+    <%= submit_tag "delete"%>
 <%end%>
+
+
 </div>
