@@ -1,0 +1,15 @@
+<h1>applet</h1>
+<div>
+<%= @applet.title %>
+</div>
+<div>
+<%= @applet.content %>
+</div>
+
+
+<%= link_to "Edit applet", edit_applet_path(@applet) %>
+<%= link_to "applets", applets_path%>
+<%= form_tag(applet_path(@applet), method: :delete) do%>
+    <%= submit_tag "delete" %>
+<%end%>
+

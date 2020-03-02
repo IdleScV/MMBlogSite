@@ -1,0 +1,4 @@
+class Applet < ApplicationRecord
+
+
+end

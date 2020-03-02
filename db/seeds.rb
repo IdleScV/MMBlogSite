@@ -5,11 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Announcement.destroy_all
+Applet.destroy_all
 User.destroy_all
 Blog.destroy_all
 Comment.destroy_all
 Like.destroy_all
 CommentLike.destroy_all
 
-p "Destroyed All #{Announcement.count}"
+p "Destroyed All #{Applet.count}"

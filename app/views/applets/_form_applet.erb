@@ -1,7 +1,7 @@
 <h1>Form</h1>
 
 <div>
-<%= form_for @announcement do |f| %>
+<%= form_for @applet do |f| %>
 <div>
 <%= f.label :title%>
 <%= f.text_field :title%>
@@ -9,10 +9,6 @@
 <div>
 <%= f.label :content %>
 <%= f.text_field :content %>
-</div>
-<div>
-<%= f.label "User"%>
-<%= f.collection_select(:user_id, User.all, :id, :name)%>
 </div>
 <%=f.submit%>
 <%end%>
