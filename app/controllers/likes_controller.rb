@@ -20,9 +20,7 @@ class LikesController < ApplicationController
     end
 
     def find_like
-        
         @like = Like.where(blog_id: params[:id], user_id: session[:user_id])
-
     end
 
 end
