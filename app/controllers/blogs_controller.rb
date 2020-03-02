@@ -56,8 +56,10 @@ class BlogsController < ApplicationController
     end
 
     def destroycommentlike
-        byebug
-        puts "hey"
+        @commentlike = CommentLike.where(comment_id: params[:id], user_id: session[:user_id])
+        blog = @commentlike[0].comment.blog
+        @commentlike.destroy_all
+        redirect_to blog_path(blog)
     end
 
 

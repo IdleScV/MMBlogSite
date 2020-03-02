@@ -3,8 +3,6 @@ class CommentlikesController < ApplicationController
   end
 
   def destroy
-    byebug
-    puts "byby"
     @like.destroy_all
     @blog = Blog.find(params[:id])
     redirect_to blog_path(@blog)
