@@ -13,6 +13,11 @@ class BlogsController < ApplicationController
         redirect_to blog_path(@blog)
     end
 
+    def newcommentlike
+       like =  CommentLike.create(comment_id: params[:id], user_id: session[:user_id])
+        redirect_to blog_path(like.comment.blog.id)
+    end
+
     def new
         @blog = Blog.new
     end
@@ -48,6 +53,11 @@ class BlogsController < ApplicationController
     
     def is_liked?
         Like.find_by(blog_id: @blog.id, user_id: session[:user_id]).exists?
+    end
+
+    def destroycommentlike
+        byebug
+        puts "hey"
     end
 
 

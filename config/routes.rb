@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'commentlikes/create'
+  get 'commentlikes/destroy'
   resources :applets, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :blogs, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
       resources :likes, only: [:create]
@@ -14,4 +16,7 @@ Rails.application.routes.draw do
 
   get "/users/:id/blogs", to: "users#blogs", as: "user_blogs"
   post "/blogs/:id/comments", to: "blogs#newcomment", as: "new_comment"
+
+  get "/blogs/:id/comment/likes", to: "blogs#destroycommentlike", as: "unlike_comment"
+  post "/blogs/:id/comments/likes", to: "blogs#newcommentlike", as: "like_comment"
 end
