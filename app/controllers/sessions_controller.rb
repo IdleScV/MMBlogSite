@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
       user = User.find_by(username: params[:username])
       if user
           session[:user_id] = user.id
-          redirect_to snacks_path
+          redirect_to homepage_path
       else 
           flash[:notice] = "No user found with those credentials"
           render :new
