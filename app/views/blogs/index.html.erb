@@ -1,11 +1,10 @@
-<h1>Blogs Index Page</h1>
-
 <h3>List of all blogs</h3>
-<ul>
+<div class="blogs_preview">
     <% @blogs.each do |blog| %>
-        <li><%= link_to blog.title, blog_path(blog) %></li>
+        <div class="blog_preview"><%= link_to blog.title, blog_path(blog) %></div>
     <% end %>
-</ul>
+</div>
+<br>
 <div>
     <%= link_to "New Blog", new_blog_path%>
 </div>

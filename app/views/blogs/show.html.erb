@@ -1,5 +1,4 @@
 <div class="title">
-    <h2>Show Page for Blog </h2>
     <h3><%= @blog.title %></h3>
     <h4>By <%=link_to @blog.user.username, user_path(@blog.user) %></h4>
 </div>
@@ -8,7 +7,9 @@
     <%= @blog.content %>
 </div>
 
-<div class="blog">
+<br>
+
+<div class="blog_options">
     <% if @blog.user.id == session[:user_id]%>
         <%= link_to "Edit Page", edit_blog_path(@blog)%>
         <%= form_tag(blog_path(@blog), method: :delete) do %>
@@ -17,24 +18,28 @@
     <% end %>
 </div>
 
+
 <div class="like_button">
     <% if Like.find_by(blog_id: @blog.id, user_id: session[:user_id]) %>
         <%= button_to 'SMASH THE Unlike', unlike_path(@blog), method: :get %> 
     <%else%>
         <%= button_to 'SMASH THE Like', blog_likes_path(@blog), method: :post %>
     <%end%>
+    <div class="like_count">
     Likes: <%= @blog.likes.count %>
+    </div>
 </div>
 
-<div class="comments">
-    <ul>
-    <%@blog.comments.each do |c| %>
 
+<div class="comments">
+    <%@blog.comments.each do |c| %>
         <div class="comment">
-            <h4>USER: <%=link_to c.user.name, user_path(c.user) %></h4>
-            <p><%= c.content %></p>
-            <%= link_to "Like this comment bro",user_path(c.user) %>
-            
+            <div class="user">
+                USER: <%=link_to c.user.name, user_path(c.user) %>
+            </div>
+            <div class="comment_content">
+                <%= c.content %>
+            </div>
             <div class="comment_like_button">
                 <% if CommentLike.find_by(comment_id: c.id, user_id: session[:user_id]) %>
                     <%= button_to 'SMASH THE Unlike', unlike_comment_path(c), method: :get %> 
@@ -42,16 +47,15 @@
                     <%= button_to 'SMASH THE Like', like_comment_path(c), method: :post %>
                 <%end%>
             </div>
-
-        Likes: <%= c.comment_likes.count %>
+            <div class="like_count">
+                Likes: <%= c.comment_likes.count %>
+            </div>
         </div>
-
     <%end%>
-    </ul>
 </div>
 
 <div>
-    <%= render "form_comment"%>
+    <%= render "form_new_comment"%>
 </div>
 
 

@@ -1,0 +1,26 @@
+.homepage {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+	grid-column-gap: 10px;
+	grid-row-gap: 10px;
+}
+
+.home_blogs {
+	grid-area: 1 / 1 / 6 / 4;
+	background-color: royalblue;
+}
+.home_profile {
+	grid-area: 1 / 4 / 3 / 6;
+	background-color: royalblue;
+}
+.user_notif {
+	grid-area: 3 / 4 / 6 / 6;
+	background-color: royalblue;
+}
+
+.single_blog {
+	background-color: skyblue;
+	margin: 5px;
+	height: 30%;
+}
