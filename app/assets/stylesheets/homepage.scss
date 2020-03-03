@@ -9,18 +9,28 @@
 .home_blogs {
 	grid-area: 1 / 1 / 6 / 4;
 	background-color: royalblue;
+	min-height: 85vh;
+	max-height: 100vh;
+	border-radius: 15px;
 }
 .home_profile {
 	grid-area: 1 / 4 / 3 / 6;
 	background-color: royalblue;
+	border-radius: 15px;
 }
 .user_notif {
 	grid-area: 3 / 4 / 6 / 6;
 	background-color: royalblue;
+	border-radius: 15px;
 }
 
 .single_blog {
 	background-color: skyblue;
 	margin: 5px;
-	height: 30%;
+	height: 10%;
+	border-radius: 5px;
+}
+
+.single_blog:hover {
+	background-color: darkblue;
 }
