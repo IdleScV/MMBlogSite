@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
    
 
-    helper_method :current_user
+    helper_method :current_user, :homepage
 
     def current_user
         # memoization
@@ -13,7 +13,9 @@ class ApplicationController < ActionController::Base
         return @current_user
     end
 
+
     def homepage
         @blogs = Blog.all.reverse
+        @apps = Applet.all
     end
 end
