@@ -1,15 +1,16 @@
 <div class="homepage">
     <div class="home_blogs">
-        <h2>Newest Blogs</h2>
+        <div class="head"><h2>Newest Blogs</h2></div>
         <% @blogs.each do |blog| %>
             <div class="single_blog">
-                <div>
+                <div class="title">
                     <%=link_to blog.title, blog_path(blog)%>
                 </div>
-                <div>
-                By: 
-                <%=link_to blog.user.name, user_path(blog.user)%> Likes: 
-                <%= blog.likes.count%>
+                <div class="creator">
+                By: <%=link_to blog.user.name, user_path(blog.user)%> 
+                </div>
+                <div class="likes">
+                Likes: <%= blog.likes.count%>
                 </div>
             </div>
         <%end%>
@@ -17,7 +18,7 @@
 
     <div class="home_profile">
         <% if session[:user_id]%>
-            <h2><%= link_to "Profile", user_path(current_user)%></h2>
+            <h3><%= link_to "Profile", user_path(current_user)%></h3>
             <div>
                 Welcome Back <%=current_user.name%>
             </div>
@@ -25,6 +26,6 @@
     </div>
 
     <div class="user_notif">
-        <div>This is notifications</div>
+        <h3>This is notifications</h3>
     <div>
 </div>
