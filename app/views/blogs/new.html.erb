@@ -1,5 +1,6 @@
 <h1>Create new Blog</h1>
-<%= render partial: "shared/error_list", locals: {new_object: @user} %>
+
+<%= render partial: "shared/error_list", locals: {new_object: @blog} %>
 
 <% if session[:user_id] %>
     <%=render "form_blog"%>
