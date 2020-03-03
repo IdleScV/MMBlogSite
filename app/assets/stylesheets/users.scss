@@ -9,12 +9,3 @@ body {
 ul {
 	list-style: none;
 }
-
-li::before {
-	content: "";
-	color: red;
-}
-li::after {
-	content: "";
-	color: red;
-}

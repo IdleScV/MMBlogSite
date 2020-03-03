@@ -11,12 +11,9 @@
   <body>
     <div class="header">
       <% if session[:user_id] %>
-        <h4>Welcome 
-          <%= current_user.username %>
-        </h4>
+        <h4>Welcome <%= current_user.username %></h4>
       <% end %>
     </div>
-  <br>
     <div>
       <%= yield %>
     </div>
