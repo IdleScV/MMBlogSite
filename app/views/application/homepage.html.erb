@@ -15,17 +15,30 @@
             </div>
         <%end%>
     </div> 
-
-    <div class="home_profile">
-        <% if session[:user_id]%>
-            <h3><%= link_to "Profile", user_path(current_user)%></h3>
-            <div>
-                Welcome Back <%=current_user.name%>
-            </div>
-        <%end%>
-    </div>
-
-    <div class="user_notif">
-        <h3>This is notifications</h3>
-    <div>
+    <% if session[:user_id]%>
+        <div class="home_profile">
+            <% if session[:user_id]%>
+                <h3><%= link_to "Profile", user_path(current_user)%></h3>
+                <div>
+                    Welcome Back <%=current_user.name%>
+                </div>
+            <%end%>
+        </div>
+        <div class="user_notif">
+            <h3>This is notifications</h3>
+        <div>
+    <%else%>
+        <div class="home_profile">
+                <div>
+                    <%= link_to "Make a new user", new_user_path%>
+                </div>
+        </div>
+        <div class="user_notif">
+            <h3>ABOUT:</h3>
+            <p>THIS IS A WEBSITE ABOUT STUFF</p>
+            <p>THIS IS A WEBSITE ABOUT STUFF</p>
+            <p>THIS IS A WEBSITE ABOUT STUFF</p>
+            <p>THIS IS A WEBSITE ABOUT STUFF</p>
+        <div>
+    <%end%>
 </div>
