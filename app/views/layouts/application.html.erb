@@ -10,26 +10,34 @@
   </head>
   <body>
     <div class="nav">
-      <% if session[:user_id] %>
-        <div>Welcome <%= current_user.username %></div>
-        <span><%= link_to "Logout", logout_path %></span>
-        <% else %>
-        <span><%= link_to "Login", login_path %></span>
-      <% end %>
-    </div>
-    <div>
-        <%= link_to "Blogs", blogs_path%>
-    </div>
-    <div>
-        <%= link_to "Applets", applets_path%>
-    </div>
-    <div>
-        <%if session[:user_id]%>
-            <%= link_to "Profile", user_path(User.find(session[:user_id]))%>
-        <%end%>
-    </div>
-    <div>
-        <%= link_to "Users", users_path %>
+      <div>
+          <%= link_to "Homepage", homepage_path%>
+      </div>
+      <div>
+          <%= link_to "Blogs", blogs_path%>
+      </div>
+      <div>
+          <%= link_to "Applets", applets_path%>
+      </div>
+      <div>
+          <%= link_to "Users", users_path %>
+      </div>
+      <div>
+          <%if session[:user_id]%>
+              <%= link_to "My Profile", user_path(User.find(session[:user_id]))%>
+          <%end%>
+      </div>
+      <div>
+        <% if session[:user_id] %>
+          <div>
+            <%= link_to "Logout", logout_path %>
+          </div>
+          <% else %>
+          <div>
+            <%= link_to "Login", login_path %>
+          </div>
+        <% end %>
+      </div>
     </div>
   <br>
     <div class="views">

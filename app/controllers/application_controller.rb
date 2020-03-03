@@ -14,5 +14,6 @@ class ApplicationController < ActionController::Base
     end
 
     def homepage
+        @blogs = Blog.all.reverse
     end
 end
