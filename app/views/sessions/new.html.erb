@@ -1,15 +1,17 @@
 
-<h1>Login</h1>
+<h1>LOGIN PAGE</h1>
 
 <%= flash.notice %>
 
-<%= form_tag login_path do %>
-    <%= label_tag :username %>
-    <%= text_field_tag :username %>
+<div>
+    <%= form_tag login_path do %>
+        <%= label_tag "USERNAME :" %>
+        <%= text_field_tag :username %>
+        <%= submit_tag "LOGIN" %>
+    <% end %>
+</div>
 
-    <%= submit_tag "Login" %>
-<% end %>
-
-<%= link_to "Users", users_path%>
-
-<%= link_to "New User", new_user_path%>
+<div>
+    <p><%= link_to "New User", new_user_path%></p>
+    <p><%= link_to "Users List", users_path%></p>
+</div> 
