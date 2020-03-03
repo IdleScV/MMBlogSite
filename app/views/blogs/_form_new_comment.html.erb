@@ -1,4 +1,7 @@
 <h4>Make a Comment</h4>
+
+
+
 <%= form_tag "/blogs/#{@blog.id}/comments", method: "post" do %>
   <%= label_tag "Comment" %>
   <%= text_field_tag :content %>
