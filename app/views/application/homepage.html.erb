@@ -6,9 +6,11 @@
                 <div class="title">
                     <%=link_to blog.title, blog_path(blog)%>
                 </div>
+                <br>
                 <div class="creator">
                 By: <%=link_to blog.user.name, user_path(blog.user)%> 
                 </div>
+                <br>
                 <div class="likes">
                 Likes: <%= blog.likes.count%>
                 </div>
