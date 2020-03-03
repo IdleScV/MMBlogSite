@@ -32,6 +32,18 @@
     <%@blog.comments.each do |c| %>
         <h4>USER: <%=link_to c.user.name, user_path(c.user) %></h4>
         <p><%= c.content %></p>
+        <%= link_to "Like this comment bro",user_path(c.user) %>
+
+        <% if CommentLike.find_by(comment_id: c.id, user_id: session[:user_id]) %>
+            <%= button_to 'SMASH THE Unlike', unlike_comment_path(c), method: :get %> 
+        <%else%>
+            <%= button_to 'SMASH THE Like', like_comment_path(c), method: :post %>
+        <%end%>
+    Likes: <%= c.comment_likes.count %>
+
+
+
+
     <%end%>
     </ul>
 </div>

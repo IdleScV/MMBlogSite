@@ -8,7 +8,7 @@ class LikesController < ApplicationController
     end
 
     def destroy
-        @like[0].destroy
+        @like.destroy_all
         @blog = Blog.find(params[:id])
         redirect_to blog_path(@blog)
     end
@@ -20,9 +20,7 @@ class LikesController < ApplicationController
     end
 
     def find_like
-        
         @like = Like.where(blog_id: params[:id], user_id: session[:user_id])
-
     end
 
 end
