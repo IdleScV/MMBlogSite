@@ -26,14 +26,14 @@
                 <%=@user.email%>
             </div>
         </div>
-        <div class="label" id="end">
             <% if current_user == @user %>
-                <%=button_to "Edit Information", edit_user_path(@user)%>
-                <%= form_tag(user_path(@user), method: :delete) do %>
-                    <%= submit_tag "delete"%>
+                <div class="label" id="end">
+                    <%=button_to "Edit Information", edit_user_path(@user)%>
+                    <%= form_tag(user_path(@user), method: :delete) do %>
+                        <%= submit_tag "delete"%>
+                </div>
                 <%end%>
             <%end %>
-        </div>
     </div>
     <div class="user-blogs">
         <% @user.blogs.each do |blog| %>

@@ -11,11 +11,11 @@
         
         <%= form_tag login_path do %>
         <div class="label">
-            <%= label_tag "USERNAME    " %> 
+            <%= label_tag "USERNAME  " %> 
             <%= text_field_tag :username %>
         </div>
         <div class="label">
-            <%= label_tag "PASSWORD    " %> 
+            <%= label_tag "PASSWORD  " %> 
             <%= password_field_tag :password %>
         </div>    
         <div class="submit">
@@ -23,9 +23,8 @@
         </div>
         <% end %>
     </div>
-
     <div class="options">
-        <p><%= link_to "New User", new_user_path%></p>
-        <p><%= link_to "Users List", users_path%></p>
+        <button><%= link_to "New User", new_user_path%></button>
+        <button><%= link_to "Users List", users_path%></button>
     </div> 
 </div>

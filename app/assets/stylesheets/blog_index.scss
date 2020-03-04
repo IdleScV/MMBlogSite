@@ -1,0 +1,31 @@
+.blog_index {
+	display: flex;
+	flex-direction: column;
+	border: solid red 2px;
+	height: 90vh;
+	margin: 5px;
+	.title {
+		text-align: center;
+		font-size: xx-large;
+		padding: 10px;
+	}
+	.blogs_preview {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		border: solid red 2px;
+		margin: 10px 10px;
+		align-content: center;
+		.blog_preview {
+			border: solid red 2px;
+			width: 30%;
+			margin: 5px 5px;
+			padding: 10px 10px;
+			text-align: left;
+			text-decoration: none;
+		}
+	}
+	.button {
+		border: solid red 2px;
+	}
+}

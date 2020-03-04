@@ -1,10 +1,10 @@
-<h3>List of all blogs</h3>
-<div class="blogs_preview">
-    <% @blogs.each do |blog| %>
-        <div class="blog_preview"><%= link_to blog.title, blog_path(blog) %></div>
-    <% end %>
-</div>
-<br>
-<div>
-    <%= link_to "New Blog", new_blog_path%>
+
+<div class="blog_index">
+    <div class="title">List of all blogs</div>
+    <div class="blogs_preview">
+        <% @blogs.each do |blog| %>
+                <%= link_to blog.title, blog_path(blog), class: "blog_preview" %>
+        <% end %>
+    </div>
+    <%= link_to "New Blog", new_blog_path, class:"button" %>
 </div>
