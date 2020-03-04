@@ -43,6 +43,14 @@ $color-white: #ddd1c7;
 		.likes {
 		}
 	}
+	a {
+		color: $color-black;
+		text-decoration-style: dotted;
+
+		&:hover {
+			color: blue;
+		}
+	}
 }
 
 .single_blog:hover {

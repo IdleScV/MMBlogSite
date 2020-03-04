@@ -26,9 +26,9 @@
                 <%=@user.email%>
             </div>
         </div>
-        <div class="label">
+        <div class="label" id="end">
             <% if current_user == @user %>
-                <%=link_to "Edit #{@user.name} page", edit_user_path(@user)%>
+                <%=button_to "Edit Information", edit_user_path(@user)%>
                 <%= form_tag(user_path(@user), method: :delete) do %>
                     <%= submit_tag "delete"%>
                 <%end%>
@@ -37,14 +37,9 @@
     </div>
     <div class="user-blogs">
         <% @user.blogs.each do |blog| %>
-            <div class="blog_link">
-                <div>
-                    <%= link_to blog.title, blog_path(blog)%>
-                </div>
-                <div>
-                    <%= blog.created_at.day %>
-                </div>
-            </div>
+   
+                    <%= link_to blog.title, blog_path(blog), class:"blog_link"%>
+              
         <% end %>
     </div>
 

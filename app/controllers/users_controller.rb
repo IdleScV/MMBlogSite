@@ -32,7 +32,7 @@ class UsersController < ApplicationController
             @user.update(user_params)
             redirect_to user_path(@user)
         else
-            redirect_to edit_user_path(@user_new)
+            redirect_to edit_user_path(@user)
         end
     end
 
