@@ -2,33 +2,59 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.title {
-    
+.blog-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline ;
+    justify-content: space-around;
 }
 
-.blog_content {
+.blog-title {
+    // background-color: lightcyan;
+    // border-style: solid;
+    font-size: 36px;
+    margin-top: 12px;
+    margin-left: 200px;
 }
 
-.blog_options {
+.blog-likes {
+    // background-color: lightcyan;
+	// border-style: solid;
+    width: 25%;
+    margin-right: 200px;
 }
 
-.like_button {
+.blog-content{
+    // border-style: solid;
+    margin-left: 200px;
+    margin-right: 200px;
 }
 
-.comments {
+.blog-pic{
+    width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.comment {
+.blog-author{
+	// border-style: solid;
+    width: 75%;
+    font-size: 20px;
+    margin-left: 200px;
+    margin-bottom: 30px;
+    margin-top: 5px;
 }
 
-.comment_like_button {
+.blog-title-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 75%;
 }
 
-.footer {
-}
-
-.comment_form {
-}
-
-.return_button {
+.blog-comments{
+    display: flex;
+    flex-direction: column;
+    border: blue;
 }
