@@ -8,5 +8,9 @@
     <%end%>
 </ul>
 
-<%= link_to "New Blog", new_blog_path%>
+<% if current_user == @user %>
+    <%= link_to "New Blog", new_blog_path%>
+<%end %>
+
+
 <%= link_to "Back to Profile", user_path(@user)%>
