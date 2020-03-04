@@ -6,10 +6,12 @@
 <%= @applet.content %>
 </div>
 
+<% if current_user.admin  %>
+    <%= link_to "Edit applet", edit_applet_path(@applet) %>
 
-<%= link_to "Edit applet", edit_applet_path(@applet) %>
 
-<%= form_tag(applet_path(@applet), method: :delete) do%>
-    <%= submit_tag "delete" %>
+    <%= form_tag(applet_path(@applet), method: :delete) do%>
+        <%= submit_tag "delete" %>
+    <%end  %>
 <%end%>
 
