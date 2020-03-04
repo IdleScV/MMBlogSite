@@ -1,3 +1,11 @@
-<h1> User New Page </h1>
-<%= render partial: "shared/error_list", locals: {new_object: @user} %>
-<%= render "form_user"%>
+
+<div class="user_form">
+
+    <div class="title"> User New Page </div>
+    <div class="warning">
+        <%= render partial: "shared/error_list", locals: {new_object: @user} %>
+    </div>
+    
+    <%= render "form_user"%>
+
+</div>
