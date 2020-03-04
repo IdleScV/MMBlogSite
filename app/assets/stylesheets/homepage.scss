@@ -38,24 +38,27 @@
 .single_blog {
 	background-color: gray;
 	margin: 7px;
-	height: 30%;
 	border-radius: 5px;
 	transition: background-color 0.25s;
 	padding: 10px 10px;
-	border: solid red 3px;
 	display: flex;
 	flex-direction: column;
+	// border: solid red 3px;
 	.title {
 		margin: 10px;
-		border: solid blue 1px;
+		// border: solid blue 1px;
 	}
-	.creator {
+
+	.description {
 		margin: 10px;
-		border: solid blue 1px;
-	}
-	.likes {
-		margin: 10px;
-		border: solid blue 1px;
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		// border: solid blue 1px;
+		.creator {
+		}
+		.likes {
+		}
 	}
 }
 
