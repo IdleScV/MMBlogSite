@@ -1,0 +1,33 @@
+.login-page {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	// border: solid red 2px;
+
+	.form {
+		align-content: center;
+		display: flex;
+		justify-content: space-evenly;
+		// border: solid red 2px;
+
+		.label {
+			width: 220px;
+			margin: 30px;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			margin-left: -40px;
+			// border: solid red 2px;
+		}
+	}
+
+	.options {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		// border: solid red 2px;
+		p {
+			margin: 30px;
+		}
+	}
+}

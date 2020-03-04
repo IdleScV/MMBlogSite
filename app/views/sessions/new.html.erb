@@ -1,19 +1,29 @@
+<div class="login-page">
+    <div class="top">
+        <div class="title">
+            <h1>LOGIN PAGE</h1>
+        </div>
+        <div class="warning">
+            <%= flash.notice %>
+        </div>
+    </div>
+    <div class="form">
+        
+        <%= form_tag login_path do %>
+        <div class="label">
+            <%= label_tag "USERNAME    " %> 
+            <%= text_field_tag :username %>
+        </div>
+        <div class="label">
+            <%= label_tag "PASSWORD    " %> 
+            <%= password_field_tag :password %>
+        </div>    
+            <%= submit_tag "LOGIN" %>
+        <% end %>
+    </div>
 
-<h1>LOGIN PAGE</h1>
-
-<%= flash.notice %>
-
-<div>
-    <%= form_tag login_path do %>
-        <%= label_tag "USERNAME :" %>
-        <%= text_field_tag :username %>
-        <%= label_tag :password %>
-        <%= password_field_tag :password %>
-        <%= submit_tag "LOGIN" %>
-    <% end %>
+    <div class="options">
+        <p><%= link_to "New User", new_user_path%></p>
+        <p><%= link_to "Users List", users_path%></p>
+    </div> 
 </div>
-
-<div>
-    <p><%= link_to "New User", new_user_path%></p>
-    <p><%= link_to "Users List", users_path%></p>
-</div> 
