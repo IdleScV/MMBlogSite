@@ -6,7 +6,7 @@
                 <div class="title">
                     <%=link_to blog.title, blog_path(blog)%>
                 </div>
-                <br>
+            <br>
                 <div class="creator">
                 By: <%=link_to blog.user.name, user_path(blog.user)%> 
                 </div>
@@ -20,9 +20,8 @@
     <% if session[:user_id]%>
         <div class="home_profile">
             <% if session[:user_id]%>
-                <h3><%= link_to "Profile", user_path(current_user)%></h3>
                 <div>
-                    Welcome Back <%=current_user.name%>
+                    Signed in as: <%=current_user.name%>
                 </div>
             <%end%>
         </div>

@@ -12,4 +12,6 @@ Comment.destroy_all
 Like.destroy_all
 CommentLike.destroy_all
 
-p "Destroyed All #{Applet.count}"
+
+
+p "Destroyed All Data"

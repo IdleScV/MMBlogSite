@@ -5,25 +5,34 @@
 	grid-column-gap: 10px;
 	grid-row-gap: 2px;
 	max-height: 75vh;
+	// border: dotted blue 1px;
 }
 
 .home_blogs {
 	grid-area: 1 / 1 / 6 / 4;
 	background-color: rgb(77, 77, 77);
+	// border: solid red 3px;
 }
 .home_blogs h2 {
 	margin: 8px auto 20px auto;
+	align-content: center;
+	text-align: center;
+	// border: solid red 3px;
 }
 
 .home_profile {
 	grid-area: 1 / 4 / 2 / 6;
-	background-color: rgb(44, 44, 44);
 	border-radius: 10px;
+	margin: auto;
+	align-content: center;
+	text-align: center;
+	// border: solid blue 3px;
 }
 .user_notif {
 	grid-area: 2 / 4 / 6 / 6;
 	background-color: rgb(77, 77, 77);
 	border-radius: 10px;
+	border: solid red 3px;
 }
 
 .single_blog {
@@ -32,20 +41,30 @@
 	height: 30%;
 	border-radius: 5px;
 	transition: background-color 0.25s;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
 	padding: 10px 10px;
+	border: solid red 3px;
+	display: flex;
+	flex-direction: column;
+	.title {
+		margin: 10px;
+		border: solid blue 1px;
+	}
+	.creator {
+		margin: 10px;
+		border: solid blue 1px;
+	}
+	.likes {
+		margin: 10px;
+		border: solid blue 1px;
+	}
 }
 
 .single_blog:hover {
 	background-color: darkgrey;
+	border: solid red 3px;
 }
 
 .single_blog.title {
 	font-size: larger;
-}
-.single_blog.creator {
-}
-.single_blog.likes {
+	border: solid red 3px;
 }
