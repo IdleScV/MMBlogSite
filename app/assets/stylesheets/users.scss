@@ -1,3 +1,73 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.user-show {
+	display: flex;
+	flex-direction: row;
+	margin: 0 0;
+	padding: 20px;
+	// border: solid red 2px;
+	height: 82vh;
+
+	.information {
+		display: flex;
+		flex-direction: column;
+		margin: 20px;
+
+		border: solid blue 2px;
+		.label {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			padding: 10px;
+			margin: 10px;
+
+			// border: solid red 2px;
+		}
+	}
+
+	.user-blogs {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		.blog_link {
+			margin: 10px;
+			// border: solid red 2px;
+		}
+	}
+}
+
+.users-box {
+	margin-left: 10%;
+	width: 80%;
+	height: 90vh;
+	// border: solid red 2px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-content: space-around;
+
+	.user {
+		color: white;
+		background: rgb(75, 75, 75);
+		text-decoration: none;
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
+		text-align: center;
+		display: flex;
+		height: 150px;
+		width: 150px;
+		// border: solid red 2px;
+		margin: 10px 2%;
+		transition: 0.5s;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+		&:hover {
+			height: 170px;
+			width: 170px;
+			background: rgb(144, 144, 144);
+			box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+		}
+	}
+}

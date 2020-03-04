@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
           session[:user_id] = user.id
           redirect_to homepage_path
       elsif !user
-          flash[:notice] = "No User Found with Username Found"
+          flash[:notice] = "No User with Username Found"
           render :new
       else
           flash[:notice] = "Password Incorrect"

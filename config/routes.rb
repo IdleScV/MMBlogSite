@@ -15,9 +15,6 @@ Rails.application.routes.draw do
   #* Logout
   get "/logout", to: "sessions#logout"
 
-  #* User blogs
-  get "/users/:id/blogs", to: "users#blogs", as: "user_blogs"
-
   #* Blog likes + comment likes
   get "/blogs/:id/like", to: "likes#destroy", as: "unlike"
   post "/blogs/:id/comments", to: "blogs#newcomment", as: "new_comment"

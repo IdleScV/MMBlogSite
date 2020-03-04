@@ -1,28 +1,55 @@
-<h1> User Show Page </h1>
-<div>
-Name: <%=@user.name%>
-</div>
+
+<div class="user-show">
+   
+    <div class="information">
+        <div class="label">
+            <div>
+                NAME:
+            </div>
+            <div>
+                <%=@user.name%>
+            </div>
+        </div>
+        <div class="label">
+            <div>
+                USERNAME:
+            </div>
+            <div>
+                <%=@user.username%>
+            </div>
+        </div>
+        <div class="label">
+            <div>
+                EMAIL:
+            </div>
+            <div>
+                <%=@user.email%>
+            </div>
+        </div>
+        <div class="label">
+            <% if current_user == @user %>
+                <%=link_to "Edit #{@user.name} page", edit_user_path(@user)%>
+                <%= form_tag(user_path(@user), method: :delete) do %>
+                    <%= submit_tag "delete"%>
+                <%end%>
+            <%end %>
+        </div>
+    </div>
+    <div class="user-blogs">
+        <% @user.blogs.each do |blog| %>
+            <div class="blog_link">
+                <div>
+                    <%= link_to blog.title, blog_path(blog)%>
+                </div>
+                <div>
+                    <%= blog.created_at.day %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+
+
+
 
 <div>
-UserName: <%=@user.username%>
-</div>
-<div>
-Email: <%=@user.email%>
-</div>
-<div>
-PW: <%=@user.password%>
-</div>
-<div>
-
-<% if current_user == @user %>
-    <%=link_to "Edit #{@user.name} page", edit_user_path(@user)%>
-    <%= form_tag(user_path(@user), method: :delete) do %>
-        <%= submit_tag "delete"%>
-    <%end%>
-<%end %>
-
-</div>
-<div>
-<%= link_to "#{@user.name}'s Blogs", user_blogs_path%>
-</div>
 

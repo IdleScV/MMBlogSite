@@ -16,3 +16,10 @@
 .views {
 	/* border: solid red 3px; */
 }
+
+body {
+	/* background-image: url(https://ctl.s6img.com/society6/img/af9oOtMr3NUEhIns0Ik_VFqG2yc/w_700/prints/~artwork/s6-original-art-uploads/society6/uploads/misc/d16122dd8b1a41fe8ca7723c46ccde5c/~~/randy-marsh-happy-face-prints.jpg?wait=0&attempt=0); */
+	background-size: cover;
+	background-position: center; /* Center the image */
+	background-repeat: no-repeat;
+}

@@ -42,8 +42,6 @@ class UsersController < ApplicationController
         redirect_to users_path
     end
 
-    def blogs
-    end
 
     private
     def user_params
