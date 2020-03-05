@@ -1,25 +1,32 @@
 
+<div class="new-user">
 
-    <div class="form">
+
+<div class="form p-5">
+   
     <%= form_for @user do |f| %>
-        <div class="label">
+        <div class="form-tag p-3">
             <%=f.label :username%>
-            <%=f.text_field :username%>
+            <%=f.text_field :username, class: "form-control"%>
         </div>
-        <div class="label">
+        <div class="form-tag p-3">
             <%=f.label :email%>
-            <%=f.text_field :email%>
+            <%=f.text_field :email, class: "form-control"%>
         </div>
-        <div class="label">
+        <div class="form-tag p-3">
             <%=f.label :name%>
-            <%=f.text_field :name%>
+            <%=f.text_field :name, class: "form-control"%>
         </div>
-        <div class="label">
+        <div class="form-tag p-3">
             <%=f.label :password%>
-            <%=f.text_field :password%>
+            <%=f.text_field :password, class: "form-control"%>
         </div>
-        <div class="submit">
-            <%=f.submit%>
+        <div class="form-tag p-3 " >
+            <%=f.submit class: "btn btn-primary"%>
+        </div>
+        <div class="p-3">
+            <%= render partial: "shared/error_list", locals: {new_object: @user} %>
         </div>
     </div>
     <%end%>
+</div>
