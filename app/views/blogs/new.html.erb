@@ -1,10 +1,12 @@
 <div class="new_blog_form">
     <% if session[:user_id] %>
-        <h1>Create new Blog</h1>
+        <h2>Create new Blog</h2>
+
         <div class="warning">
             <%= render partial: "shared/error_list", locals: {new_object: @blog} %>
         </div>
         <div class="new_form">
+
             <%=render "form_blog"%>
         </div>
     <% else %>
