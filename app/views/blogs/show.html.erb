@@ -1,7 +1,7 @@
 <div class="px-4">
 <h1 class="display-4"><%= @blog.title %></h1>
 <div class="d-flex flex-row border p-2 align-items-baseline">
-    <h5 class="pr-4">By <%=link_to @blog.user.username, user_path(@blog.user) %></h5>
+    <h4 class="pr-4">By <%=link_to @blog.user.username, user_path(@blog.user) %></h4>
     <div class="align-self-baseline pr-1"><% if Like.find_by(blog_id: @blog.id, user_id: session[:user_id]) %>
         <%= button_to 'Unlike', unlike_path(@blog), method: :get, :class=>"btn btn-danger btn-sm" %> 
     <%else%>
@@ -10,20 +10,23 @@
     <div><%= @blog.likes.count %></div>
 </div>
 
-<div class="px-4"><%=@blog.content%></div>
+<div class="px-5 py-3"><%=@blog.content%></div>
 
 <%= render "form_new_comment"%>
 
 <%@blog.comments.each do |c| %>
-    <div class="">
-    USER: <%=link_to c.user.name, user_path(c.user) %>
-    <%= c.content %>
-    <% if CommentLike.find_by(comment_id: c.id, user_id: session[:user_id]) %>
-        <%= button_to 'Unlike', unlike_comment_path(c), method: :get, :class=>"btn btn-danger btn-sm" %> 
-    <%else%>
-        <%= button_to 'Like', like_comment_path(c), method: :post, :class=>"btn btn-primary btn-sm" %>
-    <%end%>    
-    Likes: <%= c.comment_likes.count %>
-<%end%>
+    <div class="border p-2 d-flex flex-column">
+        <div class="border d-flex flex-row p-2">
+            USER: <%=link_to c.user.name, user_path(c.user) %>
+            <% if CommentLike.find_by(comment_id: c.id, user_id: session[:user_id]) %>
+                <%= button_to 'Unlike', unlike_comment_path(c), method: :get, :class=>"btn btn-danger btn-sm" %> 
+            <%else%>
+                <%= button_to 'Like', like_comment_path(c), method: :post, :class=>"btn btn-primary btn-sm" %>
+        </div>
+        <div>
+            <%= c.content %>
+        </div>
+        <%end%>
     </div>
+<%end%>
 </div>
