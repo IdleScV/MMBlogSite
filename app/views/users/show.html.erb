@@ -1,9 +1,9 @@
 
 <div class="d-flex flex-row p-5 container">
-    <div class="column card" style="width: 18rem; height: 32rem;">
+    <div class="column card border-white" style="width: 18rem; height: 32rem;">
         <img class="card-img-top" src="<%=Faker::Avatar.image%>" alt="Card image cap">
 
-        <ul class="list-group list-group-flush">
+        <ul class="list-group list-group-flush border border-secondary rounded">
             <li class="list-group-item d-flex justify-content-between">
                 <div class="font-weight-bold">USERNAME: </div> 
                 <div class="font-weight-light"><%=@user.username%></div>
@@ -24,36 +24,47 @@
                     <div ><%= submit_tag "Delete", class: "btn btn-secondary"%></div>
                 <%end%>
             </li>
+            <li class="list-group-item d-flex justify-content-center">
+            <%=link_to "+ New Blog", new_blog_path, class: "btn btn-secondary"%>
+            </li>
         <% end %>
         </ul>
     </div>
-    <div class="column " style="width: 50rem; height: 32rem;">
+    <div class="column m-3" style="width: 50rem; height: 32rem;">
         <div class="text-center p-1 font-weight-bold">BLOGS</div>
-        <div id="accordion">
-        <% @user.blogs.each do |blog| %>
-            <div class="card">
-                <div class="card-header" id="heading<%=blog.id%>">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link text-decoration-none" data-toggle="collapse" data-target="#collapse<%=blog.id%>" aria-expanded="true" aria-controls="collapse<%=blog.id%>">
-                        <div class="d-flex justify-content-between">
-                            <div class="p-1 font-weight-bold"><%=blog.comments.count%>💬</div>
-                            <div class="p-1 font-weight-bold"><%=blog.likes.count%>👍</div>
-                            <div class="p-1 font-weight-bold"><%=blog.created_at.strftime("%m/%d/%Y")%></div>
-                            <a href="<%=blog_path(blog)%>" class="p-1"><%=blog.title%></a>
-                                
-                        </div>
-                        </button>
-                    </h5>
-                </div>
+        <% if @user.blogs.any? %>
+            <div id="accordion">
+            <% @user.blogs.each do |blog| %>
+                <div class="card">
+                    <div class="card-header" id="heading<%=blog.id%>">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link text-decoration-none" data-toggle="collapse" data-target="#collapse<%=blog.id%>" aria-expanded="true" aria-controls="collapse<%=blog.id%>">
+                            <div class="d-flex justify-content-between">
+                                <div class="p-1 font-weight-bold"><%=blog.comments.count%> 💬</div>
+                                <div class="p-1 font-weight-bold"><%=blog.likes.count%> 👍</div>
+                                <div class="p-1 font-weight-bold"><%=blog.created_at.strftime("%m/%d/%Y")%></div>
+                                <a href="<%=blog_path(blog)%>" class="p-1"><%=blog.title%></a>
+                                    
+                            </div>
+                            </button>
+                        </h5>
+                    </div>
 
-                <div id="collapse<%=blog.id%>" class="collapse show" aria-labelledby="heading<%=blog.id%>" data-parent="#accordion">
-                    <div class="card-body">
-                        <%=blog.content%>
+                    <div id="collapse<%=blog.id%>" class="collapse show" aria-labelledby="heading<%=blog.id%>" data-parent="#accordion">
+                        <div class="card-body">
+                            <%=blog.content%>
+                        </div>
                     </div>
                 </div>
+            <% end %>
             </div>
+        <% else %>
+            <% if current_user == @user %>
+                <div class="text-center p-5">You have no blogs</div>
+            <% else %>
+                <div class="text-center p-5"><%= @user.name %> has no blogs</div>
+            <% end %>
         <% end %>
-        </div>
     </div>
 <div>
 

@@ -17,7 +17,7 @@
 
 
             <% @blogs.each do |blog| %>
-                    <a href="<%=blog_path(blog)%>" class="btn btn-outline-secondary m-2 container">
+                    <a href="<%=blog_path(blog)%>" class="btn btn-outline-secondary m-2 container rounded">
                         <div class="col-mid-auto"><%=blog.title%></div>
                         <div class="d-flex">
                             <div class="mr-auto p-2 badge"><%=blog.user.name%></div>

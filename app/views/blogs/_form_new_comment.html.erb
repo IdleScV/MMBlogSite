@@ -1,9 +1,13 @@
-<h4>Make a Comment</h4>
+
+<h4 style="font-weight: 500;">Make a Comment</h4>
 
 
 
 <%= form_tag "/blogs/#{@blog.id}/comments", method: "post" do %>
-  <%= label_tag "Comment" %>
-  <%= text_field_tag :content %>
-  <%= submit_tag "Submit" %>
+<div class="form-group">
+  <div class="d-flex">
+  <%= text_field_tag :content, nil, placeholder: "comment", class: "form-control" %>
+  <%= submit_tag "Submit", class: "ml-4 btn btn-outline-secondary" %>
+  </div>
+</div>
 <% end %>
