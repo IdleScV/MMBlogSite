@@ -1,7 +1,12 @@
-
-    <div class="users-box">
-        
-        <%@users.each do |user| %>
-            <%=link_to user.name, user_path(user), class: "user"%>
-        <%end%>
-    </div>
+<div class="users-box">
+    <%@users.each do |user| %>
+        <div class="card" style="width: 18rem;">
+            <img src="<%=Faker::Avatar.image%>" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><%=user.name%></h5>
+                <p class="card-text">Author. Innovator. Thinker. Entrepeuner</p>
+                <a href="<%=user_path(user)%>" class="btn btn-primary">Profile</a>
+            </div>
+        </div>
+    <%end%>
+</div>
