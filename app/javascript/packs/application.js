@@ -1,5 +1,5 @@
 //= require jquery
-//= require bootstrap-sprockets
+//= require bootstrap
 
 // This file is automatically compiled by Webpack, along with any other files
 // present in this directory. You're encouraged to place your actual application logic in
