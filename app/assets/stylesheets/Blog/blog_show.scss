@@ -7,6 +7,8 @@
     flex-direction: row;
     align-items: baseline ;
     justify-content: space-around;
+    margin-top: 200px;
+    border: thick red !important;
 }
 
 .blog-title {
@@ -15,6 +17,7 @@
     font-size: 36px;
     margin-top: 12px;
     margin-left: 200px;
+    border: red;
 }
 
 .blog-likes {
@@ -51,6 +54,7 @@
     flex-direction: column;
     justify-content: space-around;
     width: 75%;
+    border: red;
 }
 
 .blog-comments{
