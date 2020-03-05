@@ -1,9 +1,15 @@
-<h1>Create new Blog</h1>
-
-<%= render partial: "shared/error_list", locals: {new_object: @blog} %>
-
-<% if session[:user_id] %>
-    <%=render "form_blog"%>
-<% else %>
-    <%= link_to "YOU DON'T EXIST, CLICK HERE",  new_user_path%>
-<% end %>
+<div class="new_blog_form">
+    <% if session[:user_id] %>
+        <h1>Create new Blog</h1>
+        <div class="warning">
+            <%= render partial: "shared/error_list", locals: {new_object: @blog} %>
+        </div>
+        <div class="new_form">
+            <%=render "form_blog"%>
+        </div>
+    <% else %>
+    <div class="no_user_block">
+        <%= link_to "SIGN UP TO MAKE A BLOG POST! CLICK HERE!",  new_user_path, class: "no_user"%>
+    </div>
+    <% end %>
+</div>

@@ -1,0 +1,41 @@
+.new_blog_form {
+    // border: solid red 2px;
+    .warning{
+        border: solid red 2px;
+    }
+    .new_form{
+        border: solid red 2px;
+    }
+    .no_user_block{
+        // border: solid red 2px;
+        text-align: center;
+        font-size: 6vw;
+        text-decoration: none;
+        height: 60vh;
+        padding: 70px 0;
+        
+        .no_user{
+            top: 10%;
+            // border: solid red 2px;
+            vertical-align: baseline;
+            text-decoration: none;
+            animation:blinkingText 1.2s infinite;
+            
+            @keyframes blinkingText{
+                0%{     background-color: #000;
+                    color: white;     }
+                49%{    background-color: #000;
+                    color: white;  }
+                60%{    background-color: transparent;
+                    color: black; }
+                99%{    background-color:transparent;
+                    color: black;  }
+                100%{   background-color: #000;
+                    color: white;    }
+            }
+            
+        }
+    }
+
+
+}
