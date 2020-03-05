@@ -15,18 +15,19 @@
 <%= render "form_new_comment"%>
 
 <%@blog.comments.each do |c| %>
-    <div class="border p-2 d-flex flex-column">
-        <div class="border d-flex flex-row p-2">
-            USER: <%=link_to c.user.name, user_path(c.user) %>
+    <div class="border py-2 d-flex flex-column">
+        <div class="border d-flex flex-row py-2">
+            <div class="pr-3"><%=link_to c.user.name, user_path(c.user)%></div>
             <% if CommentLike.find_by(comment_id: c.id, user_id: session[:user_id]) %>
                 <%= button_to 'Unlike', unlike_comment_path(c), method: :get, :class=>"btn btn-danger btn-sm" %> 
             <%else%>
                 <%= button_to 'Like', like_comment_path(c), method: :post, :class=>"btn btn-primary btn-sm" %>
+            <%end%>
+            <div class="pl-1"><%=c.comment_likes.count%></div>
         </div>
-        <div>
+        <div class="py-1">
             <%= c.content %>
         </div>
-        <%end%>
     </div>
 <%end%>
 </div>
