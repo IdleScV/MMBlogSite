@@ -1,10 +1,10 @@
-<div class="users-box">
+<div class="users-box p-5 d-flex flex-sm-wrap justify-content-between">
     <%@users.each do |user| %>
-        <div class="card" style="width: 18rem;">
+        <div class="card m-2" style="width: 16rem; height: 25rem;">
             <img src="<%=Faker::Avatar.image%>" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title"><%=user.name%></h5>
-                <p class="card-text">Author. Innovator. Thinker. Entrepeuner</p>
+                <p class="card-text"><%=user.email%></p>
                 <a href="<%=user_path(user)%>" class="btn btn-primary">Profile</a>
             </div>
         </div>

@@ -1,17 +1,21 @@
 
 
-<div class="form">
-<%= form_for @blog do |f| %>
-  <div class="title">
-  <%= f.text_area :title, class: "field", placeholder: "Title" %>
-  </div>
-  
-  <div class="paragraph">
-  <%= f.text_area :content, class: "field", placeholder: "Content" %>
-  </div>
-  
-  <%= f.hidden_field :user_id, value: session[:user_id] %>
-
-  <%= f.submit class: "submit", value: "Publish" %>
-<% end  %>
+<div class="form p-5">
+    <%= form_for @blog do |f| %>
+      <div class="form-tag p-3">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control"%>
+      </div>
+      <div class="form-tag p-3">
+        <%= f.label :Content%>
+        <%= f.text_area :content, class: "form-control form-control-lg form-height-lg" %>
+        <%= f.hidden_field :user_id, value: session[:user_id] %>
+      </div>
+      <div class="form-tag p-3">
+        <%= f.submit class: "btn btn-primary"%>
+      </div>
+    <% end  %>
+    <div class="p-3">
+      <%= render partial: "shared/error_list", locals: {new_object: @blog} %>
+    </div>
 </div>
