@@ -1,17 +1,16 @@
-<div class="new_blog_form">
+<div class="">
     <% if session[:user_id] %>
-        <h2>Create new Blog</h2>
 
-        <div class="warning">
-            <%= render partial: "shared/error_list", locals: {new_object: @blog} %>
-        </div>
-        <div class="new_form">
+        
+        <div class="">
 
             <%=render "form_blog"%>
         </div>
     <% else %>
-    <div class="no_user_block">
-        <%= link_to "SIGN UP TO MAKE A BLOG POST! CLICK HERE!",  new_user_path, class: "no_user"%>
+    <div class="row h-100">
+    <div class="p-5 text-center my-auto col-sm-12 ">
+        <%= link_to "SIGN UP TO MAKE A BLOG POST! CLICK HERE!",  new_user_path, class: "btn btn-outline-danger btn-lg card"%>
+    </div>
     </div>
     <% end %>
 </div>
