@@ -62,8 +62,8 @@
 	0% {
 		opacity: 0;
 	}
-	80% {
-		opacity: 0;
+	60% {
+		opacity: 1;
 	}
 	90% {
 		opacity: 1;
@@ -73,10 +73,10 @@
 	}
 }
 .animate-flicker {
-	-webkit-animation: flickerAnimation 10s infinite;
-	-moz-animation: flickerAnimation 10s infinite;
-	-o-animation: flickerAnimation 10s infinite;
-	animation: flickerAnimation 10s infinite;
+	-webkit-animation: flickerAnimation 8s infinite;
+	-moz-animation: flickerAnimation 8s infinite;
+	-o-animation: flickerAnimation 8s infinite;
+	animation: flickerAnimation 8s infinite;
 }
 
 #myVideo {
@@ -156,10 +156,10 @@
 }
 
 .animate-flickerA {
-	-webkit-animation: flickerAnimationA 10s;
-	-moz-animation: flickerAnimationA 10s;
-	-o-animation: flickerAnimationA 10s;
-	animation: flickerAnimationA 10s;
+	-webkit-animation: flickerAnimationA 12s;
+	-moz-animation: flickerAnimationA 12s;
+	-o-animation: flickerAnimationA 12s;
+	animation: flickerAnimationA 12s;
 }
 
 .animate-flickerB {
@@ -171,4 +171,10 @@
 
 body {
 	background-size: cover;
+}
+
+.indent:active {
+	-webkit-box-shadow: inset 1px 1px 10px #333;
+	-moz-box-shadow: inset 1px 1px 10px #333;
+	box-shadow: inset 1px 1px 10px #333;
 }

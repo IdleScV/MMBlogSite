@@ -9,26 +9,24 @@
   <% if session[:user_id] %>
   <h1 class="m-auto animate-flickerB">Welcome <%= current_user.name %></h1>
   <div class="p-1 m-auto d-flex justify-content-around" style="width: 30vw;">
-    <%=link_to "PROFILE", user_path(current_user.id), class: "m-5 btn btn-secondary btn-sm"%>
+    <%=link_to "PROFILE", user_path(current_user.id), class: "m-5 btn btn-light btn-sm"%>
     <div class="container text-center">
         <img src="https://i.kym-cdn.com/photos/images/newsfeed/001/598/772/918.png" height="42" width="42" style="margin-left: 80px;" class="animate-flicker row">
-        <div class="animate-flicker row" style="margin-left: 50px;" >uh oh... stinky!</div>
+        <div class="animate-flicker row" style="margin-left: 50px;" >uh oh... stinky! haha! </div>
     </div>
-    
-    <%=link_to "BLOGS", blogs_path, class: "m-5 btn btn-secondary btn-sm" %>
-    </div>
+    <%=link_to "BLOGS", blogs_path, class: "m-5 btn btn-light btn-sm" %>
+  </div>
   
   <% else %>
   <h1 class="animate-flickerB ml-5 bt-5 mt-5 row "  style="padding-top: 20px;">Imagine....</h1>
-  <p class="animate-flickerA ml-5 bt-5 mt-5" style="padding-top: 50px;">A blog site that revolutionized everything.</p>
+  <p class="animate-flickerA ml-5 bt-5 mt-5" style="padding-top: 50px;">A stinky Monkey</p>
   <div class="p-5 m-auto d-flex justify-content-around" style="width: 30vw;">
-    <%=link_to "LOGIN", login_path, class: "m-5 btn btn-secondary btn-sm"%>
+    <%=link_to "LOGIN", login_path, class: "m-5 btn btn-light btn-sm"%>
     <div class="container text-center">
         <img src="https://i.kym-cdn.com/photos/images/newsfeed/001/598/772/918.png" height="42" width="42" style="margin-left: 80px;" class="animate-flicker row">
-        <div class="animate-flicker row" style="margin-left: 50px;" >uh oh... stinky!</div>
+        <div class="animate-flicker row" style="margin-left: 50px;" >uh oh... stinky! haha!</div>
     </div>
-    
-    <%=link_to "BLOGS", blogs_path, class: "m-5 btn btn-secondary btn-sm" %>
+    <%=link_to "BLOGS", blogs_path, class: "m-5 btn btn-light btn-sm" %>
     </div>
   <% end %>
 </div>
