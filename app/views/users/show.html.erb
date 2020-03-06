@@ -31,7 +31,7 @@
         </ul>
     </div>
     <div class="column m-3" style="width: 50rem; height: 32rem;">
-        <div class="text-center p-1 font-weight-bold">BLOGS</div>
+        <div class="text-center p-1 font-weight-bold" style="font-size: 2rem;">BLOGS</div>
         <% if @user.blogs.any? %>
             <div id="accordion">
             <% @user.blogs.each do |blog| %>
@@ -51,7 +51,7 @@
                                 <div class="p-1 font-weight-bold"><%=blog.likes.count%> 👍</div>
                                 <div class="p-1 font-weight-bold"><%=blog.created_at.strftime("%m/%d/%Y")%></div>
                                 
-                                <a href="<%=blog_path(blog)%>" class="p-1 ml-5"><%=blog.title%></a>
+                                <a href="<%=blog_path(blog)%>" class="p-1 ml-5" style="font-size: 0.8rem;"><%=blog.title%></a>
                             </div>
                             </button>
                         </h5>
