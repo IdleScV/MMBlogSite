@@ -20,56 +20,56 @@
 	0% {
 		opacity: 0;
 	}
-	5% {
+	80% {
 		opacity: 0;
 	}
 	90% {
-		opacity: 0;
+		opacity: 1;
 	}
 	100% {
-		opacity: 1;
+		opacity: 0;
 	}
 }
 @-o-keyframes flickerAnimation {
 	0% {
 		opacity: 0;
 	}
-	5% {
+	80% {
 		opacity: 0;
 	}
 	90% {
-		opacity: 0;
+		opacity: 1;
 	}
 	100% {
-		opacity: 1;
+		opacity: 0;
 	}
 }
 @-moz-keyframes flickerAnimation {
 	0% {
 		opacity: 0;
 	}
-	5% {
+	80% {
 		opacity: 0;
 	}
 	90% {
-		opacity: 0;
+		opacity: 1;
 	}
 	100% {
-		opacity: 1;
+		opacity: 0;
 	}
 }
 @-webkit-keyframes flickerAnimation {
 	0% {
 		opacity: 0;
 	}
-	5% {
+	80% {
 		opacity: 0;
 	}
 	90% {
-		opacity: 0;
+		opacity: 1;
 	}
 	100% {
-		opacity: 1;
+		opacity: 0;
 	}
 }
 .animate-flicker {
@@ -102,8 +102,8 @@
 	0% {
 		opacity: 0;
 	}
-	50% {
-		opacity: 1;
+	10% {
+		opacity: 0;
 	}
 	90% {
 		opacity: 1;
@@ -116,8 +116,8 @@
 	0% {
 		opacity: 0;
 	}
-	50% {
-		opacity: 1;
+	10% {
+		opacity: 0;
 	}
 	90% {
 		opacity: 1;
@@ -130,8 +130,8 @@
 	0% {
 		opacity: 0;
 	}
-	50% {
-		opacity: 1;
+	10% {
+		opacity: 0;
 	}
 	90% {
 		opacity: 1;
@@ -144,8 +144,8 @@
 	0% {
 		opacity: 0;
 	}
-	50% {
-		opacity: 1;
+	10% {
+		opacity: 0;
 	}
 	90% {
 		opacity: 1;
@@ -156,8 +156,15 @@
 }
 
 .animate-flickerA {
-	-webkit-animation: flickerAnimationA 6s infinite;
-	-moz-animation: flickerAnimationA 6s infinite;
-	-o-animation: flickerAnimationA 6s infinite;
-	animation: flickerAnimationA 6s infinite;
+	-webkit-animation: flickerAnimationA 10s;
+	-moz-animation: flickerAnimationA 10s;
+	-o-animation: flickerAnimationA 10s;
+	animation: flickerAnimationA 10s;
+}
+
+.animate-flickerB {
+	-webkit-animation: flickerAnimationA 6s;
+	-moz-animation: flickerAnimationA 6s;
+	-o-animation: flickerAnimationA 6s;
+	animation: flickerAnimationA 6s;
 }
