@@ -1,8 +1,8 @@
 <div class="users-box p-5 d-flex flex-sm-wrap justify-content-around">
     <%@users.each do |user| %>
-        <div class="card m-2 border-white" style="width: 16rem; height: 25rem;">
+        <div class="card m-2 border-white light-shadow" style="width: 16rem; height: 25rem;">
             <img src="<%=user.propic%>" class="card-img-top border border-white" alt="...">
-            <div class="card-body border border-secondary rounded">
+            <div class="card-body border border-light rounded shadow-sm">
                 <h5 class="card-title"><%=user.name%></h5>
                 <p class="card-text"><%=user.email%></p>
                 <a href="<%=user_path(user)%>" class="px-auto btn btn-primary" style="width: 13.2rem;">Profile</a>

@@ -2,7 +2,7 @@
 <div class="new-user">
 
 
-<div class="form p-5">
+<div class="form p-5 m-auto" style="width: 50vw;">
    
     <%= form_for @user do |f| %>
         <div class="form-tag p-3">
@@ -22,7 +22,7 @@
             <%=f.password_field :password, class: "form-control"%>
         </div>
         <div class="form-tag p-3 " >
-            <%=f.submit class: "btn btn-primsary"%>
+            <%=f.submit class: "btn btn-primary"%>
         </div>
         <div class="p-3">
             <%= render partial: "shared/error_list", locals: {new_object: @user} %>

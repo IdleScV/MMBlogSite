@@ -3,7 +3,7 @@
     <div class="column card border-white" style="width: 18rem; height: 32rem;">
         <img class="card-img-top" src="<%=@user.propic%>" alt="Card image cap">
 
-        <ul class="list-group list-group-flush border border-secondary rounded">
+        <ul class="list-group list-group-flush border border-light shadow rounded">
             <li class="list-group-item d-flex justify-content-between">
                 <div class="font-weight-bold">USERNAME: </div> 
                 <div class="font-weight-light"><%=@user.username%></div>
@@ -35,8 +35,8 @@
         <% if @user.blogs.any? %>
             <div id="accordion">
             <% @user.blogs.each do |blog| %>
-                <div class="card">
-                    <div class="card-header" id="heading<%=blog.id%>">
+                <div class="card shadow-sm">
+                    <div class="card-header " id="heading<%=blog.id%>">
                         <h5 class="mb-0">
                             <button class="btn btn-link text-decoration-none" data-toggle="collapse" data-target="#collapse<%=blog.id%>" aria-expanded="true" aria-controls="collapse<%=blog.id%>">
                             <div class="d-flex justify-content-between">
