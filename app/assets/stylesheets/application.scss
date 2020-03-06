@@ -73,8 +73,91 @@
 	}
 }
 .animate-flicker {
-	-webkit-animation: flickerAnimation 15s infinite;
-	-moz-animation: flickerAnimation 15s infinite;
-	-o-animation: flickerAnimation 15s infinite;
-	animation: flickerAnimation 15s infinite;
+	-webkit-animation: flickerAnimation 10s infinite;
+	-moz-animation: flickerAnimation 10s infinite;
+	-o-animation: flickerAnimation 10s infinite;
+	animation: flickerAnimation 10s infinite;
+}
+
+#myVideo {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	min-width: 100%;
+	min-height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+	font-family: Arial, Helvetica, sans-serif;
+	position: fixed;
+	bottom: 50%;
+	color: #f1f1f1;
+	width: 100%;
+	padding: 20px;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+@keyframes flickerAnimationA {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@-o-keyframes flickerAnimationA {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@-moz-keyframes flickerAnimationA {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@-webkit-keyframes flickerAnimation {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.animate-flickerA {
+	-webkit-animation: flickerAnimationA 6s infinite;
+	-moz-animation: flickerAnimationA 6s infinite;
+	-o-animation: flickerAnimationA 6s infinite;
+	animation: flickerAnimationA 6s infinite;
 }
