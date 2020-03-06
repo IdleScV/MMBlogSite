@@ -37,8 +37,14 @@ class BlogsController < ApplicationController
     end
 
     def destroy
+        id = @blog.user_id
         @blog.destroy
-        redirect_to blogs_path
+        if params["user_page"] == "true"
+            redirect_to user_path(id)
+        else
+            redirect_to blogs_path
+        end
+        
     end
 
     def newcomment

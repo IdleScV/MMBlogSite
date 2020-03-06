@@ -44,7 +44,12 @@
                                 <div class="p-1 font-weight-bold"><%=blog.likes.count%> 👍</div>
                                 <div class="p-1 font-weight-bold"><%=blog.created_at.strftime("%m/%d/%Y")%></div>
                                 <a href="<%=blog_path(blog)%>" class="p-1"><%=blog.title%></a>
-                                    
+                                <% if current_user == @user %>
+                                    <%= form_tag(blog_path(blog), method: :delete) do %>
+                                         <%= hidden_field_tag 'user_page', "true" %>
+                                        <div class="p-1 font-weight-bold"><%= submit_tag "Delete"%></div>
+                                    <%end%>
+                                <% end %>
                             </div>
                             </button>
                         </h5>
