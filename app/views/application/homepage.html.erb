@@ -1,5 +1,14 @@
-<div class="text-center" style="height:80vh; background-image: url('https://media3.giphy.com/media/QQrHHFUZ5zkzu/giphy.gif?cid=790b76114ae19cb25554f5f216fa4ff0942a8ef427e370ba&rid=giphy.gif') ; background-position: center; background-size: auto; background-repeat: no-repeat;">
-   <div class="p-5 m-auto d-flex justify-content-around" style="width: 30vw;">
+<%# <%=video_tag("/videos/Saint_Barthelemy_2.mp4", size: "800x800")%> %>
+
+<video autoplay muted loop id="myVideo">
+  <source src="/videos/Saint_Barthelemy_2.mp4" type="video/mp4"/>
+</video>
+
+<div class="content">
+  <h1>Imagine....</h1>
+  <p>A blog site that revolutionized everything.</p>
+
+  <div class="p-5 m-auto d-flex justify-content-around" style="width: 30vw;">
     <%=link_to "BLOGS", blogs_path, class: "m-3 btn btn-outline-secondary btn-lg" %>
     <div class="container text-center">
         <img src="https://i.kym-cdn.com/photos/images/newsfeed/001/598/772/918.png" height="42" width="42" style="margin-left: 80px;" class="animate-flicker row">
@@ -8,6 +17,4 @@
     <%=link_to "LOGIN", login_path, class: "m-3 btn btn-outline-secondary btn-lg"%>
 
     </div>
-    
- 
 </div>
