@@ -1,7 +1,7 @@
 
 <div class="d-flex flex-row p-5 container">
     <div class="column card border-white" style="width: 18rem; height: 32rem;">
-        <img class="card-img-top" src="<%=Faker::Avatar.image%>" alt="Card image cap">
+        <img class="card-img-top" src="<%=@user.propic%>" alt="Card image cap">
 
         <ul class="list-group list-group-flush border border-secondary rounded">
             <li class="list-group-item d-flex justify-content-between">
@@ -19,9 +19,9 @@
         
         <% if current_user == @user %>
             <li class="list-group-item d-flex justify-content-between">
-                <div><%= button_to "Edit Information", edit_user_path(@user), method: :get,class: "btn btn-secondary"%></div>
+                <div><%= button_to "Edit Information", edit_user_path(@user), method: :get,class: "btn btn-primary"%></div>
                 <%= form_tag(user_path(@user), method: :delete) do %>
-                    <div ><%= submit_tag "Delete", class: "btn btn-secondary"%></div>
+                    <div><%= submit_tag "Destroy", class: "btn btn-danger"%></div>
                 <%end%>
             </li>
             <li class="list-group-item d-flex justify-content-center">
@@ -40,16 +40,18 @@
                         <h5 class="mb-0">
                             <button class="btn btn-link text-decoration-none" data-toggle="collapse" data-target="#collapse<%=blog.id%>" aria-expanded="true" aria-controls="collapse<%=blog.id%>">
                             <div class="d-flex justify-content-between">
+                                <% if current_user == @user %>
+                                    <a><%= link_to " Edit ", edit_blog_path(blog), class: "mr-1 btn btn badge-primary btn-sm", style: "width: 60px"%></a>
+                                    <%= form_tag(blog_path(blog), method: :delete) do %>
+                                         <%= hidden_field_tag 'user_page', "true" %>
+                                        <a><%= submit_tag "Delete", class: "p-1 mr-5 btn badge-danger btn-sm", style: "width: 60px" %></a>
+                                    <%end%>
+                                <% end %>
                                 <div class="p-1 font-weight-bold"><%=blog.comments.count%> 💬</div>
                                 <div class="p-1 font-weight-bold"><%=blog.likes.count%> 👍</div>
                                 <div class="p-1 font-weight-bold"><%=blog.created_at.strftime("%m/%d/%Y")%></div>
-                                <a href="<%=blog_path(blog)%>" class="p-1"><%=blog.title%></a>
-                                <% if current_user == @user %>
-                                    <%= form_tag(blog_path(blog), method: :delete) do %>
-                                         <%= hidden_field_tag 'user_page', "true" %>
-                                        <div class="p-1 font-weight-bold"><%= submit_tag "Delete"%></div>
-                                    <%end%>
-                                <% end %>
+                                
+                                <a href="<%=blog_path(blog)%>" class="p-1 ml-5"><%=blog.title%></a>
                             </div>
                             </button>
                         </h5>

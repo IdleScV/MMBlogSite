@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   #* Homepage
   get '/',to: "application#homepage", as: "homepage"
   #* Login
-  get "/login", to: "sessions#new"
+  get "/login", to: "sessions#new", as: "login"
   post "/login", to: "sessions#create"
   #* Logout
   get "/logout", to: "sessions#logout"
