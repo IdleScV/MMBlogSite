@@ -3,9 +3,9 @@
 <div class="d-flex flex-row p-2 align-items-baseline">
     <h4 class="pr-4 badge" style="font-size: 1rem;">By <%=link_to @blog.user.username, user_path(@blog.user) %></h4>
     <div class="align-self-baseline pr-1 "><% if Like.find_by(blog_id: @blog.id, user_id: session[:user_id]) %>
-            <%= button_to "👎 #{@blog.comments.count + 1}", unlike_path(@blog), method: :get, :class=>"btn btn-danger btn-sm" %> 
+            <%= button_to "👎 #{@blog.likes.count + 1}", unlike_path(@blog), method: :get, :class=>"btn btn-danger btn-sm" %> 
         <%else%>
-            <%= button_to "👍 #{@blog.comments.count} ", blog_likes_path(@blog), method: :post, :class=>"btn btn-primary btn-sm" %>
+            <%= button_to "👍 #{@blog.likes.count} ", blog_likes_path(@blog), method: :post, :class=>"btn btn-primary btn-sm" %>
         <%end%>
     </div>
 </div>
